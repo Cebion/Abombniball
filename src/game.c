@@ -30,7 +30,7 @@
 #include <ctype.h>
 #include <SDL_mixer.h>
 
-extern char *strdup(char *);
+
 
 static char *_bomb_images[] = { "bomb-1.png",
                                 "bomb-2.png",
@@ -712,7 +712,7 @@ int gameLoadLevel(Game *game, char *levelname){
   int jumps = 3;
   int i;
   int tiles_read = 0;
-  char read_char;
+  int read_char;
   
   int bomb_coords[256];
   int bomb_count=0;
