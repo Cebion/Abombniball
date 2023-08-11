@@ -19,3 +19,11 @@
  */
 
 
+#ifndef ABOMBNIBALL_H
+#define ABOMBNIBALL_H
+
+#include "SDL.h"
+#include "SDL_image.h"
+#include "SDL_mixer.h"
+
+#endif

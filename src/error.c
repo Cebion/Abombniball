@@ -19,3 +19,5 @@
  */
 
 
+char _internal_error[1024];
+

@@ -19,3 +19,15 @@
  */
 
 
+#ifndef MAIN_H
+#define MAIN_H
+
+enum{ GFX,
+      LEVELS,
+      AUDIO
+} Sections;
+
+char *mainCreateFilename(int section, char *filename);
+void strip_crud(char *str);
+
+#endif

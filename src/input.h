@@ -19,3 +19,23 @@
  */
 
 
+#ifndef INPUT_H
+#define INPUT_H
+#include "SDL.h"
+
+#define INPUT_NONE  0
+#define INPUT_LEFT  1
+#define INPUT_UP    2
+#define INPUT_RIGHT 3
+#define INPUT_DOWN  4
+
+typedef struct Input{
+  int direction;
+  int fire;
+  int quit;
+} Input;
+
+
+void inputHandle(Input *input);
+
+#endif

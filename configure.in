@@ -1,0 +1,29 @@
+AC_INIT(README)
+AC_PROG_MAKE_SET
+
+CFLAGS="-g"
+
+AM_INIT_AUTOMAKE(abombniball,0.1)
+# Use the macro SDL provides to check the installed version of the SDL
+# development environment.  Abort the configuration process if the
+# minimum version we require isn't available.
+SDL_VERSION=1.1.0
+AM_PATH_SDL($SDL_VERSION,
+	:,
+	AC_MSG_ERROR([*** SDL version $SDL_VERSION not found!])
+)
+
+AC_PROG_CC
+
+
+AC_CHECK_LIB(SDL_image, main,, AC_MSG_ERROR(SDL_image is needed. http://www.libsdl.org))
+AC_CHECK_LIB(SDL_mixer, main,, AC_MSG_ERROR(SDL_mixer is needed. http://www.libsdl.org))
+
+
+CFLAGS="$CFLAGS $SDL_CFLAGS -W -Wall -pedantic -ansi"
+LIBS="$LIBS $SDL_LIBS"
+
+AC_OUTPUT([
+Makefile 
+src/Makefile])
+

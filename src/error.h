@@ -19,3 +19,24 @@
  */
 
 
+#ifndef ERROR_H
+#define ERROR_H
+
+extern char _internal_error[];
+
+#define DEBUG
+
+#ifdef DEBUG
+#define errorSet(sys,msg) \
+do{\
+  sprintf(_internal_error, "%s::%s  (%s:%d)", sys, msg, __FILE__, __LINE__);\
+  fprintf(stderr, "%s\n", _internal_error);\
+}while(0)
+#else
+#define errorSet(sys,msg) \
+  sprintf(_internal_error, "%s::%s  (%s:%d)", sys, msg, __FILE__, __LINE__);
+#endif
+
+#define errorGet() _internal_error
+
+#endif
